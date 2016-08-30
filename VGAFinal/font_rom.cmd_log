@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "C:/Users/Administrator/FPGA/VGAFinal/font_rom.xst" -ofn "C:/Users/Administrator/FPGA/VGAFinal/font_rom.syr" 
+vhdtdtfi -lang verilog -prj VGAFinal -o C:/Users/Administrator/FPGA/VGAFinal/font_rom.tfi -lib work C:/Users/Administrator/FPGA/VGAFinal//font_rom.v -module font_rom -template C:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 

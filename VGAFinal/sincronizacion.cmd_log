@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "C:/Users/Administrator/FPGA/VGAFinal/sincronizacion.xst" -ofn "C:/Users/Administrator/FPGA/VGAFinal/sincronizacion.syr" 
+xst -intstyle ise -ifn "C:/Users/Administrator/FPGA/VGAFinal/sincronizacion.xst" -ofn "C:/Users/Administrator/FPGA/VGAFinal/sincronizacion.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 sincronizacion.ngc sincronizacion.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o sincronizacion_map.ncd sincronizacion.ngd sincronizacion.pcf 
+par -w -intstyle ise -ol high -t 1 sincronizacion_map.ncd sincronizacion.ncd sincronizacion.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml sincronizacion.twx sincronizacion.ncd -o sincronizacion.twr sincronizacion.pcf 

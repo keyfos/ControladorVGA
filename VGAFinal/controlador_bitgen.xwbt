@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\Administrator\FPGA\VGAFinal\controlador.ncd
+OUTFILE=C:\Users\Administrator\FPGA\VGAFinal\controlador.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4fg320
+WORKINGDIR=C:\Users\Administrator\FPGA\VGAFinal
+LICENSE=WebPack
+USER_INFO=211049012_0_0_538

@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=C:\Users\Administrator\FPGA\VGAFinal\impact.xsl
+OUTFILE=C:\Users\Administrator\FPGA\VGAFinal\impact.xsl
+FAMILY=Multiple
+PART=Multiple
+WORKINGDIR=C:\Users\Administrator\FPGA\VGAFinal
+LICENSE=iMPACT
+USER_INFO=iMPACT

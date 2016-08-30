@@ -1,0 +1,4 @@
+verilog work "font_rom.v"
+verilog work "timer.v"
+verilog work "text_gen.v"
+verilog work "controlador.v"

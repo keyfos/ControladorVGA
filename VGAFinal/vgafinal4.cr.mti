@@ -1,0 +1,8 @@
+D:/Desktop/cata/VGAFinal/controladorvga_tb.v {1 {vlog -work work -stats=none D:/Desktop/cata/VGAFinal/controladorvga_tb.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module controladorvga_tb
+
+Top level modules:
+	controladorvga_tb
+
+} {} {}}

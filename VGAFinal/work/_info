@@ -1,0 +1,94 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Modeltech_pe_edu_10.4a/lib
+vcontrolador
+Z0 !s110 1472493480
+!i10b 1
+!s100 _7S@jF2A5`6I:Ioga[c`L2
+ISEREmAjXS2A947d:5hMP43
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dD:/Desktop/cata/VGAFinal
+Z3 w1472490897
+Z4 8D:/Desktop/cata/VGAFinal/netgen/synthesis/controlador_synthesis.v
+Z5 FD:/Desktop/cata/VGAFinal/netgen/synthesis/controlador_synthesis.v
+L0 36
+Z6 OP;L;10.4a;61
+r1
+!s85 0
+31
+Z7 !s108 1472493480.000000
+Z8 !s107 D:/Desktop/cata/VGAFinal/netgen/synthesis/controlador_synthesis.v|
+Z9 !s90 -reportprogress|300|-work|work|-stats=none|D:/Desktop/cata/VGAFinal/netgen/synthesis/controlador_synthesis.v|
+!s101 -O0
+!i113 1
+Z10 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
+vcontrolador_tb
+R0
+!i10b 1
+!s100 ^L2RYSXEnTI;JMn`O3Ub02
+ISZ]HG_>m`hGY?dZ]MOCWD3
+R1
+R2
+w1472490844
+8D:/Desktop/cata/VGAFinal/controlador_tb.v
+FD:/Desktop/cata/VGAFinal/controlador_tb.v
+Z11 L0 25
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/Desktop/cata/VGAFinal/controlador_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Desktop/cata/VGAFinal/controlador_tb.v|
+!s101 -O0
+!i113 1
+R10
+vcontroladorvga_tb
+!s110 1472490387
+!i10b 1
+!s100 ^AK=R_GQf4`IGmb4`FAmo3
+IRck[bhc^ggXEmzM14^@ni3
+R1
+R2
+w1471638483
+8D:/Desktop/cata/VGAFinal/controladorvga_tb.v
+FD:/Desktop/cata/VGAFinal/controladorvga_tb.v
+R11
+R6
+r1
+!s85 0
+31
+!s108 1472490387.000000
+!s107 D:/Desktop/cata/VGAFinal/controladorvga_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Desktop/cata/VGAFinal/controladorvga_tb.v|
+!s101 -O0
+!i113 1
+R10
+vglbl
+R0
+!i10b 1
+!s100 Ez11oC`>CA<8`gQ@BlKW=1
+IQlLR]o@D@NGAT3^kSYD3O3
+R1
+R2
+R3
+R4
+R5
+L0 1333
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!s101 -O0
+!i113 1
+R10

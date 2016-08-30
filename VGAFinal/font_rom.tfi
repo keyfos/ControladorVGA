@@ -1,0 +1,11 @@
+
+
+
+// Instantiate the module
+font_rom instance_name (
+    .clk(clk), 
+    .addr(addr), 
+    .data_w(data_w)
+    );
+
+

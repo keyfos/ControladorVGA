@@ -1,0 +1,409 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
+ 
+--> Reading design: text_gen.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "text_gen.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "text_gen"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : text_gen
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "font_rom.v" in library work
+Compiling verilog file "text_gen.v" in library work
+Module <font_rom> compiled
+Module <text_gen> compiled
+No errors in compilation
+Analysis of file <"text_gen.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <text_gen> in library <work>.
+
+Analyzing hierarchy for module <font_rom> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <text_gen>.
+Module <text_gen> is correct for synthesis.
+ 
+Analyzing module <font_rom> in library <work>.
+Module <font_rom> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <font_rom>.
+    Related source file is "font_rom.v".
+    Found 2048x8-bit ROM for signal <data>.
+    Found 11-bit register for signal <addr_reg>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred  11 D-type flip-flop(s).
+Unit <font_rom> synthesized.
+
+
+Synthesizing Unit <text_gen>.
+    Related source file is "text_gen.v".
+WARNING:Xst:647 - Input <pix_x<5:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pix_y<6:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 4-bit comparator greatequal for signal <names_on$cmp_le0000> created at line 44.
+    Found 4-bit comparator lessequal for signal <names_on$cmp_le0001> created at line 44.
+    Summary:
+	inferred   2 Comparator(s).
+	inferred   1 Multiplexer(s).
+Unit <text_gen> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 2048x8-bit ROM                                        : 1
+# Registers                                            : 1
+ 11-bit register                                       : 1
+# Comparators                                          : 2
+ 4-bit comparator greatequal                           : 1
+ 4-bit comparator lessequal                            : 1
+# Multiplexers                                         : 1
+ 1-bit 8-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1710 - FF/Latch <addr_reg_3> (without init value) has a constant value of 0 in block <font_unit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <addr_reg_8> (without init value) has a constant value of 0 in block <font_unit>. This FF/Latch will be trimmed during the optimization process.
+
+Synthesizing (advanced) Unit <font_rom>.
+INFO:Xst:3044 - The ROM <Mrom_data> will be implemented as a read-only BLOCK RAM, absorbing the register: <addr_reg>.
+INFO:Xst:3225 - The RAM <Mrom_data> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 2048-word x 8-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <addr>          |          |
+    |     diA            | connected to internal node          |          |
+    |     doA            | connected to signal <data>          |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <font_rom> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 2048x8-bit single-port block RAM                      : 1
+# Comparators                                          : 2
+ 4-bit comparator greatequal                           : 1
+ 4-bit comparator lessequal                            : 1
+# Multiplexers                                         : 1
+ 1-bit 8-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <text_gen> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block text_gen, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : text_gen.ngr
+Top Level Output File Name         : text_gen
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 31
+
+Cell Usage :
+# BELS                             : 21
+#      GND                         : 1
+#      INV                         : 2
+#      LUT2                        : 3
+#      LUT3                        : 9
+#      LUT4                        : 2
+#      MUXF5                       : 2
+#      MUXF6                       : 1
+#      VCC                         : 1
+# RAMS                             : 1
+#      RAMB16_S9                   : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 23
+#      IBUF                        : 16
+#      OBUF                        : 7
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                        8  out of   4656     0%  
+ Number of 4 input LUTs:                 16  out of   9312     0%  
+ Number of IOs:                          31
+ Number of bonded IOBs:                  24  out of    232    10%  
+ Number of BRAMs:                         1  out of     20     5%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 1     |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: 3.590ns
+   Maximum output required time after clock: 9.974ns
+   Maximum combinational path delay: 9.178ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 21 / 9
+-------------------------------------------------------------------------
+Offset:              3.590ns (Levels of Logic = 2)
+  Source:            pix_x<8> (PAD)
+  Destination:       font_unit/Mrom_data (RAM)
+  Destination Clock: clk rising
+
+  Data Path: pix_x<8> to font_unit/Mrom_data
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             6   1.218   0.844  pix_x_8_IBUF (pix_x_8_IBUF)
+     LUT3:I0->O            2   0.704   0.447  char_addr_l<1>1 (char_addr_l<1>)
+     RAMB16_S9:ADDR5           0.377          font_unit/Mrom_data
+    ----------------------------------------
+    Total                      3.590ns (2.299ns logic, 1.291ns route)
+                                       (64.0% logic, 36.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 48 / 6
+-------------------------------------------------------------------------
+Offset:              9.974ns (Levels of Logic = 5)
+  Source:            font_unit/Mrom_data (RAM)
+  Destination:       colores<2> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: font_unit/Mrom_data to colores<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAMB16_S9:CLK->DO1    1   2.800   0.499  font_unit/Mrom_data (font_word<1>)
+     LUT3:I1->O            1   0.704   0.000  Mmux__COND_3_6 (Mmux__COND_3_6)
+     MUXF5:I0->O           1   0.321   0.000  Mmux__COND_3_4_f5 (Mmux__COND_3_4_f5)
+     MUXF6:I0->O           3   0.521   0.706  Mmux__COND_3_2_f6 (font_bit)
+     LUT2:I0->O            2   0.704   0.447  text_rgb<2>1 (text_rgb_2_OBUF)
+     OBUF:I->O                 3.272          colores_2_OBUF (colores<2>)
+    ----------------------------------------
+    Total                      9.974ns (8.322ns logic, 1.652ns route)
+                                       (83.4% logic, 16.6% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 55 / 7
+-------------------------------------------------------------------------
+Delay:               9.178ns (Levels of Logic = 6)
+  Source:            pix_x<1> (PAD)
+  Destination:       colores<2> (PAD)
+
+  Data Path: pix_x<1> to colores<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.218   0.420  pix_x_1_IBUF (pix_x_1_IBUF)
+     INV:I->O              2   0.704   0.447  _COND_2<1>1_INV_0 (_COND_2<1>)
+     MUXF5:S->O            1   0.739   0.000  Mmux__COND_3_3_f5 (Mmux__COND_3_3_f5)
+     MUXF6:I1->O           3   0.521   0.706  Mmux__COND_3_2_f6 (font_bit)
+     LUT2:I0->O            2   0.704   0.447  text_rgb<2>1 (text_rgb_2_OBUF)
+     OBUF:I->O                 3.272          colores_2_OBUF (colores<2>)
+    ----------------------------------------
+    Total                      9.178ns (7.158ns logic, 2.020ns route)
+                                       (78.0% logic, 22.0% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 11.00 secs
+Total CPU time to Xst completion: 11.34 secs
+ 
+--> 
+
+Total memory usage is 310564 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    4 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+

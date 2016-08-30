@@ -1,0 +1,2 @@
+verilog work "font_rom.v"
+verilog work "text_gen.v"

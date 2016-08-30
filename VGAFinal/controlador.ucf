@@ -1,0 +1,14 @@
+NET "r" LOC = "G18";
+NET "g" LOC = "H18";
+NET "b" LOC = "K18";
+
+NET "clk" LOC = "B8"; 
+NET "rst" LOC = "B18" ;
+NET "hsync" LOC = "T4"; 
+NET "vsync" LOC = "U3"; 
+
+NET "colores<0>" LOC = "R9";
+NET "colores<1>" LOC = "N8"; 
+NET "colores<2>" LOC = "U5"; 
+
+	
